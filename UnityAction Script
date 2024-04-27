@@ -1,0 +1,26 @@
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+public class UnityAction : MonoBehaviour
+{
+    public Button TestButton;
+    private UnityEngine.Events.UnityAction ActionExample;
+
+    void Start()
+    {
+        ActionExample += FunctionOne;
+        ActionExample += FunctionTwo;
+        TestButton.onClick.AddListener(ActionExample);
+    }
+
+    void FunctionOne()
+    {
+        Debug.Log("First function activated");
+    }
+
+    void FunctionTwo()
+    {
+        Debug.Log("Second function activated");
+    }
+}
